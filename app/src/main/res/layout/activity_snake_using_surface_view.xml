@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SnakeActivityUsingSurfaceView">
+
+        <RelativeLayout
+            android:id="@+id/rl_snake_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/snakebg">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Unable to connect. Please check your internet connection and try again."
+                android:layout_height="wrap_content"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="26sp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:layout_above="@+id/iv_play"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:text="SNAKE RUN"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="10dp"
+                android:layout_height="wrap_content"/>
+
+
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_baseline_play_circle_outline_24" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_game_container"
+            android:layout_above="@+id/ll_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Score : 0"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tv_hi_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HI : 0"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                android:gravity="start"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_surface_view"
+                android:layout_below="@+id/tv_hi_score"
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@android:color/holo_green_dark"
+                android:padding="6dp">
+
+                <SurfaceView
+                    android:id="@+id/surface_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </SurfaceView>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black">
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/topBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_arrow_up_24"
+                android:tint="@color/white"
+                android:background="@android:color/holo_red_dark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/leftBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_arrow_left_24"
+                    android:tint="@color/white"
+                    android:background="@android:color/holo_red_dark" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/rightBtn"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_arrow_right_24"
+                    android:tint="@color/white"
+                    android:background="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/bottomBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_arrow_down_24"
+                android:tint="@color/white"
+                android:background="@android:color/holo_red_dark" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
